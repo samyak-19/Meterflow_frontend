@@ -17,7 +17,7 @@ function ApiDetails() {
   const [data, setData] = useState({});
 
   const fetchData = async () => {
-    const res = await fetch(`http://localhost:5000/api/admin/api/${id}`, {
+    const res = await fetch(`https://meterflow-backend-2pas.onrender.com/api/admin/api/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

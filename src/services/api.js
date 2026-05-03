@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://meterflow-backend-2pas.onrender.com";
 
 export const apiRequest = async (url, method = "GET", body) => {
   const token = localStorage.getItem("token");

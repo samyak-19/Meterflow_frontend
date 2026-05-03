@@ -16,7 +16,7 @@
     // 🔥 FETCH APIS WITH ANALYTICS
     const fetchApis = async () => {
       const data = await fetch(
-        "http://localhost:5000/api/apis/my-apis-analytics",
+        "https://meterflow-backend-2pas.onrender.com/api/apis/my-apis-analytics",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -33,7 +33,7 @@
   const fetchEarnings = async () => {
     try {
       const data = await fetch(
-        "http://localhost:5000/api/apis/provider/earnings",
+        "https://meterflow-backend-2pas.onrender.com/api/apis/provider/earnings",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -57,7 +57,7 @@
         return;
       }
 
-      await fetch("http://localhost:5000/api/apis/create", {
+      await fetch("https://meterflow-backend-2pas.onrender.com/api/apis/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@
 
     // 🔑 GENERATE KEY (FIXED)
     const generateKey = async (apiId) => {
-      const res = await fetch("http://localhost:5000/api/apis/generate-key", {
+      const res = await fetch("https://meterflow-backend-2pas.onrender.com/api/apis/generate-key", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

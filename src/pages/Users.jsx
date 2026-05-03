@@ -9,7 +9,7 @@ function Users() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/users", {
+      const res = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

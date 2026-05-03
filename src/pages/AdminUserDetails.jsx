@@ -16,10 +16,10 @@ function AdminUserDetails() {
     const headers = { Authorization: `Bearer ${token}` };
 
     
-    setSubscription(await fetch(`http://localhost:5000/api/admin/user/${userId}/subscription`, { headers }).then(r => r.json()));
+    setSubscription(await fetch(`https://meterflow-backend-2pas.onrender.com/api/admin/user/${userId}/subscription`, { headers }).then(r => r.json()));
 
     const data = await fetch(
-  `http://localhost:5000/api/admin/user/${userId}`,
+  `https://meterflow-backend-2pas.onrender.com/api/admin/user/${userId}`,
   { headers }
 ).then(r => r.json());
 

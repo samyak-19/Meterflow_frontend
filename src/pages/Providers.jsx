@@ -7,7 +7,7 @@ function Providers() {
 
   const fetchProviders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/apis", {
+      const res = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/apis", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -34,7 +34,7 @@ function Dashboard() {
   };
 
   const fetchData = async () => {
-    const apisData = await safeFetch("http://localhost:5000/api/apis/public");
+    const apisData = await safeFetch("https://meterflow-backend-2pas.onrender.com/api/apis/public");
     setApis(Array.isArray(apisData) ? apisData : []);
 
     if (apisData?.length > 0 && !selectedApi) {
@@ -42,7 +42,7 @@ function Dashboard() {
 }
 
     const subData = await safeFetch(
-      "http://localhost:5000/api/user/subscription",
+      "https://meterflow-backend-2pas.onrender.com/api/user/subscription",
       { headers }
     );
     setUserPlan(subData?.plan || "free");
@@ -50,13 +50,13 @@ function Dashboard() {
     if (!apiKey) return;
 
     const usageData = await safeFetch(
-      `http://localhost:5000/api/usage?apiKey=${apiKey}`,
+      `https://meterflow-backend-2pas.onrender.com/api/usage?apiKey=${apiKey}`,
       { headers }
     );
     setUsage(Array.isArray(usageData) ? usageData : []);
 
     const billingData = await safeFetch(
-      `http://localhost:5000/api/billing?apiKey=${apiKey}`,
+      `https://meterflow-backend-2pas.onrender.com/api/billing?apiKey=${apiKey}`,
       { headers }
     );
     setBilling(billingData || {});
@@ -65,7 +65,7 @@ function Dashboard() {
 
 if (apiKey && selectedApi?._id) {
   analyticsData = await safeFetch(
-    `http://localhost:5000/api/analytics/user?apiKey=${apiKey}&apiId=${selectedApi._id}`,
+    `https://meterflow-backend-2pas.onrender.com/api/analytics/user?apiKey=${apiKey}&apiId=${selectedApi._id}`,
     { headers }
   );
 }
@@ -81,7 +81,7 @@ setAnalytics(analyticsData || {});
   // 🔑 GENERATE KEY
   const generateKey = async (apiId) => {
     const data = await safeFetch(
-      "http://localhost:5000/api/apis/generate-key",
+      "https://meterflow-backend-2pas.onrender.com/api/apis/generate-key",
       {
         method: "POST",
         headers,
@@ -108,7 +108,7 @@ setAnalytics(analyticsData || {});
 
   try {
     await fetch(
-      `http://localhost:5000/gateway/${apiKey}`
+      `https://meterflow-backend-2pas.onrender.com/gateway/${apiKey}`
     );
     alert("API called!");
     fetchData();
@@ -118,7 +118,7 @@ setAnalytics(analyticsData || {});
 };
 
   const upgradePlan = async () => {
-    await safeFetch("http://localhost:5000/api/user/upgrade", {
+    await safeFetch("https://meterflow-backend-2pas.onrender.com/api/user/upgrade", {
       method: "POST",
       headers,
     });

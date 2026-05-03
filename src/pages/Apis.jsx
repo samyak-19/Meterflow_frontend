@@ -11,7 +11,7 @@ function Apis() {
 
   const fetchApis = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/apis-analytics", {
+      const res = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/apis-analytics", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,7 +27,7 @@ function Apis() {
 const updatePrice = async (apiId, price) => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/admin/api/${apiId}/price`,
+      `https://meterflow-backend-2pas.onrender.com/api/admin/api/${apiId}/price`,
       {
         method: "PUT",
         headers: {

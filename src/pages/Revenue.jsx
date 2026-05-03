@@ -24,7 +24,7 @@ function Revenue() {
         Authorization: `Bearer ${token}`,
       };
 
-      const res = await fetch("http://localhost:5000/api/admin/revenue", {
+      const res = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/revenue", {
         headers,
       });
 
@@ -33,9 +33,9 @@ function Revenue() {
       setRevenue(data[0]?.totalRevenue || 0);
 
       // 🔥 fake chart data (replace later)
-     const summary = await fetch("http://localhost:5000/api/admin/revenue/summary", { headers }).then(r => r.json());
-    const trend = await fetch("http://localhost:5000/api/admin/revenue/trend", { headers }).then(r => r.json());
-    const topApis = await fetch("http://localhost:5000/api/admin/revenue/top-apis", { headers }).then(r => r.json());
+     const summary = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/revenue/summary", { headers }).then(r => r.json());
+    const trend = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/revenue/trend", { headers }).then(r => r.json());
+    const topApis = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/revenue/top-apis", { headers }).then(r => r.json());
     } catch (err) {
       console.error(err);
     }

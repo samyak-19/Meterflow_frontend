@@ -14,10 +14,10 @@ function AdminDashboard() {
   try {
     const headers = { Authorization: `Bearer ${token}` };
 
-    const statsData = await fetch("http://localhost:5000/api/admin/stats", { headers }).then(r => r.json());
+    const statsData = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/stats", { headers }).then(r => r.json());
 
     const requestTrend = await fetch(
-  "http://localhost:5000/api/admin/requests/trend",
+  "https://meterflow-backend-2pas.onrender.com/api/admin/requests/trend",
   {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ function AdminDashboard() {
   }
 ).then((r) => r.json());
 
-    const revenueTrend = await fetch("http://localhost:5000/api/admin/revenue/trend", { headers }).then(r => r.json());
+    const revenueTrend = await fetch("https://meterflow-backend-2pas.onrender.com/api/admin/revenue/trend", { headers }).then(r => r.json());
 
     setStats(statsData);
     setRequestData(requestTrend);
