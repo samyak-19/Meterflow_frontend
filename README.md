@@ -80,14 +80,23 @@ fetch("https://your-backend.onrender.com/api/apis/public")
 ## 📁 Project Structure
 
 client/
+
 ├── src/
+
 │   ├── components/
+
 │   ├── pages/
+
 │   ├── layouts/
+
 │   ├── App.jsx
+
 │   └── main.jsx
+
 ├── public/
+
 ├── vite.config.js
+
 └── vercel.json
 
 ---
